@@ -9,4 +9,14 @@ import "../styles/index.css";
 import Home from "./component/home.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+
+var contador = 0;
+var Interval = setInterval(function Inter() {
+	contador++;
+
+	let reset = () => {
+		contador = 0;
+	};
+	ReactDOM.render(<Home numero={contador} />, document.querySelector("#app"));
+}, 1000);
+export default Interval;
