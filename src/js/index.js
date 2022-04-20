@@ -9,29 +9,34 @@ import "../styles/index.css";
 import Home from "./component/home.jsx";
 
 //render your react application
+var trueFalse = false;
 var Interval;
 var contador = 0;
 
-function Start() {
-	Interval = setInterval(function () {
+Interval = setInterval(function () {
+	if (!trueFalse) {
 		contador++;
+	}
 
-		let reset = () => {
-			contador = 0;
-			ReactDOM.render(
-				<Home numero={contador} reset={reset} />,
-				document.querySelector("#app")
-			);
-		};
-
+	let reset = () => {
+		contador = 0;
 		ReactDOM.render(
 			<Home numero={contador} reset={reset} />,
 			document.querySelector("#app")
 		);
-	}, 1000);
-}
+	};
+
+	ReactDOM.render(
+		<Home numero={contador} reset={reset} />,
+		document.querySelector("#app")
+	);
+}, 1000);
+//START
+const Start = () => {
+	trueFalse = false;
+};
 //STOP
 const Detener = () => {
-	clearInterval(Interval);
+	trueFalse = true;
 };
 export { Start, Detener };
