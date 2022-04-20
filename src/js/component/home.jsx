@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 import React from "react";
-import Interval from "../../js/index.js";
+import { Start, Detener } from "../../js/index.js";
 
 //create your first component
 const Home = (props) => {
@@ -25,10 +25,10 @@ const Home = (props) => {
 				/>
 			</div>
 			<div className="mt-1 rounded d-flex justify-content-center">
-				<button className="btn btn-dark mx-1" onClick={props.Interval}>
+				<button className="btn btn-dark mx-1" onClick={Start}>
 					Start
 				</button>
-				<button className="btn btn-dark mx-1" onClick={detener}>
+				<button className="btn btn-dark mx-1" onClick={Detener}>
 					Stop
 				</button>
 				<button className="btn btn-dark mx-1" onClick={props.reset}>
@@ -37,11 +37,6 @@ const Home = (props) => {
 			</div>
 		</div>
 	);
-};
-//FUNCTIONS
-//STOP
-const detener = (props) => {
-	clearInterval(Interval);
 };
 
 const Contador = (props) => {
