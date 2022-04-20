@@ -25,7 +25,9 @@ const Home = (props) => {
 				/>
 			</div>
 			<div className="mt-1 rounded d-flex justify-content-center">
-				<button className="btn btn-dark mx-1">Start</button>
+				<button className="btn btn-dark mx-1" onClick={props.Interval}>
+					Start
+				</button>
 				<button className="btn btn-dark mx-1" onClick={detener}>
 					Stop
 				</button>
